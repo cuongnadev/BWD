@@ -1,0 +1,478 @@
+
+@use '../abstracts/' as *;
+/************* header *************/
+
+.header__container {
+    width: 100%;
+    height: 1024px;
+    @include flex($display: flex,$direction: column,$align: center,
+    $justify: start,$wrap: false,$gap: false);
+    background: url(../assets/images/background.png) ;
+    &--content-container {
+        @include flex($display: flex,$direction: column,$align: center,
+        $justify: start,$wrap: false,$gap: 67px);
+        @include tablet-mini {
+            gap: 220px;
+        }
+        @include mobile {
+            gap: 118px;
+        }
+    }
+    overflow: hidden; // note
+    @include mobile {
+        height: 1227px;
+    }
+}
+.header__menu {
+    @include flex($display: flex,$direction: column,$align: center,
+    $justify: center,$wrap: false,$gap: false);
+    width: 100%;
+    height: 114px;
+    margin-top: 35px;
+    transition: 0.1s linear;
+    @include tablet-mini {
+        margin-top: 25px;
+        height: 134px;
+    }
+    @include mobile {
+        margin-top: 0;
+        height: 90px;
+    }
+}
+.header__top {
+    @include flex($display: flex,$direction: false,$align: false,
+    $justify: space-between,$wrap: false,$gap: 30px);
+    width: 100%;
+    height: 24px;
+}
+.menu__contact {
+    @include flex($display: flex,$direction: false,$align: false,
+    $justify: false,$wrap: false,$gap: 30px);
+    &--email, &--call {
+        @include flex($display: flex,$direction: false,$align: center,
+        $justify: center,$wrap: false,$gap: 10px);
+        @include mobile {
+            display: none;
+        }
+    }
+    &--icon {
+        width: 18px;
+        height: 18px;
+        flex-shrink: 0;
+    }
+    &--text {
+        @include font($font-family:$primary-font,$font-size:16px,$font-weight:400,$font-style:normal,$line-height:24px,$color:$color-white);
+    }
+}
+.menu__nav--logo:hover img,
+.menu__contact--icon:hover {
+    cursor: pointer;
+    transform: scale(1.05);
+    transform-origin: center;
+}
+.menu__contact--text:hover {
+    cursor: pointer;
+    opacity: 0.8;
+}
+.menu__social {
+    @include flex( $display: flex,$direction: false,$align: center,
+        $justify: center,$wrap: false,$gap: 15px
+    ) ;
+    flex-shrink: 0;
+    @include mobile {
+        display: none;
+    }
+}
+
+.menu__nav {
+    position: relative;
+    width: 100%;    
+    height: 90px;
+    flex-shrink: 0;
+    &--menu {
+        width: 100%;
+        height: 60px;
+        @include flex( $display: flex,$direction: false,$align: center,
+        $justify: space-between,$wrap: false,$gap: false) ;
+        position: absolute;
+        top: 15px;
+        border-radius: 5px;
+        background: $color-white;
+        box-shadow: 0px 1px 10px 0px rgba(0, 0, 0, 0.10);
+        @include mobile {
+            height: 40px;
+        }
+    }
+    &--logo {
+        max-width: 200px;
+        width: 100%;
+        height: 90px;
+        @include flex( $display: flex,$direction: false,$align: center,
+        $justify: center,$wrap: false,$gap: false) ;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        background-color: $color-white;
+        border-radius: 5px;
+        box-shadow: 0px 1px 10px 0px rgba(0, 0, 0, 0.10);
+        transform: translate(-50%, -50%);
+        z-index: 1;
+        @include mobile {
+            max-width: 100px;
+            width: 100%;
+            height: 60px;
+            &-img {
+                max-width: 79px;
+                width: 100%;
+                height: 12px;
+            }
+        }
+    }
+    &--groups-lists {
+        height: 26px;
+        @include flex( $display: flex,$direction: false,$align: false,
+            $justify: space-between,$wrap: false,$gap: false
+        ) ;
+        flex: 1;
+    }
+    &--list {
+        @include flex( $display: flex,$direction: false,$align: center,
+        $justify: space-between,$wrap: false,$gap: 40px) ;
+        &:first-child {
+            margin-left: 52px;
+        }
+        &:last-child {
+            margin-right: 43px;
+        }
+        @include tablet-large {
+            display: none;
+        }
+    }
+    &--item {
+        width: 100%;
+        height: 100%;
+        & a {
+            @include font($font-family:$primary-font,$font-size:20px,$font-weight:600,$font-style:normal,$line-height:30px,$color:$text-color-primary);
+            height: 100%;
+            text-decoration: none;
+            text-transform: uppercase;
+        }
+        &:hover a {
+            color: $color-primary;
+            text-decoration-line: underline;
+        }
+    }
+    @include tablet-mini {
+        margin-top: 20px;
+    }
+    @include mobile {
+        margin-top: 0px;
+        height: 70px;
+    }
+}
+.menu-bar {
+    margin-left: 18px;
+    &:hover {
+        transform: scale(1.1);
+    }
+    @include desktop{
+        display: none;
+    }
+    @include mobile {
+        margin-left: 8px;
+    }
+}
+.menu__button--download {
+    @include button($width:158px,$height:50px,$background-color:$color-primary,$border-radius:5px,$border:none);
+    flex-shrink: 0;
+    margin-right: 5px;
+    &:hover {
+        background: linear-gradient(to bottom, $color-primary, #4a49d2);
+        transform: scale(1.01); 
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    }
+    & h6 {
+        @include font($font-family:$primary-font,$font-size:20px,$font-weight:600,$font-style:normal,$line-height:30px,$color:$color-white);
+        text-transform: uppercase;
+    }
+    @include mobile {
+        max-width: 76px;
+        width: 100%;
+        height: 34px;
+        margin-right: 4px;
+        & h6 {
+            font-size: 10px;
+        }
+    }
+}
+.header__hero {
+    width: 100%;
+    @include flex( $display: flex,$direction: false,$align: center,
+        $justify: space-between,$wrap: false,$gap: false);
+    @include mobile {
+        width: 50%;
+        @include flex( $display: flex,$direction: column,$align: center,
+            $justify: center,$wrap: false,$gap: 60px);
+    }
+}
+.hero__text {
+    position: relative;
+    @include mobile {
+        transform: translateX(-10px);
+    }
+}
+.hero__upper-frame {
+    width: 570px;
+    height: 432px;
+    position: relative;
+    flex-shrink: 0;
+    background: $color-white;
+    z-index: 1;
+    @include tablet-large {
+        width: 486px;
+        height: 396px;
+    }
+    @include tablet-mini {
+        width: 356px;
+        height: 318px;
+    }
+    @include mobile {
+        width: 323px;
+    }
+}
+.hero__lower-frame {
+    width: 570px;
+    height: 535px;
+    position: absolute;
+    top: -51px;
+    right: -50px;
+    border: 18px solid #7572FF;
+    flex-shrink: 0;
+    @include tablet-large {
+        width: 496px;
+        top: -40px;
+        right: -40px;
+        height: 475px;
+    }
+    @include tablet-mini {
+        width: 375px;
+        height: 381px;
+        top: -32px;
+        right: -32px;
+    }
+    @include mobile {
+        width: 323px;
+        height: 358px;
+        top: -20px;
+        right: -20px;
+        border: 10px solid #7572FF;
+    }
+}
+.hero__title {
+    padding: 40px 0 18px 30px;
+    @include font($font-family:$primary-font,$font-size:48.83px,$font-weight:700,$font-style:normal,$line-height:130%,$color:$color-primary);
+    text-transform: uppercase;
+    @include tablet-large {
+        font-size: 31.25px;
+        line-height: 47.25px;
+    }
+    @include tablet-mini {
+        padding: 14px 0 0 18px;
+        font-size: 31.25px;
+        line-height: 47.25px;
+    }
+    @include mobile {
+        padding: 30px 0 0 18px;
+        width: 278px;
+        height: 94px;
+        font-size: 25px;
+        font-weight: 600;
+        line-height: 37.5px;
+    }
+}
+.hero__para {
+    max-width: 487px;
+    width: 100%;
+    height: 66px;
+    margin: 0 0 52px 30px;
+    @include font($font-family:$primary-font,$font-size:16px,$font-weight:400,$font-style:normal,$line-height:24px,$color:$text-color-gray);
+    flex-shrink: 0;
+    @include tablet-large {
+        width: 430px;
+    }
+    @include tablet-mini {
+        margin: 6px auto 23px 18px;
+        width: 330px;
+        height: 66px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+    @include mobile {
+        margin: 18px auto 30px 18px;
+        width: 293px;
+    }
+}
+.hero__sub-title {
+    margin: 0 0 0 30px;
+    @include font($font-family:$primary-font,$font-size:25px,$font-weight:600,$font-style:normal,$line-height:37.5px,$color:$text-color-primary);
+    text-transform: uppercase;
+    @include tablet-mini {
+        margin-left: 18px;
+        margin-bottom: 23px;
+        font-size: 20px;
+        line-height: 30px;
+    }
+    @include mobile {
+        margin: 0 0 20px 18px;
+        font-size: 20px;
+        line-height: 30px;
+    }
+}
+.hero__download {
+    margin-left: 30px;
+    @include flex( $display: flex,$direction: false,$align: center,
+        $justify: false,$wrap: false,$gap: 14px) ;
+    &--chplay:hover,
+    &--appstore:hover {
+        transform: scale(1.05);
+    }
+    @include tablet-mini {
+        margin-left: 18px;
+    }
+    @include mobile {
+        margin-left: 18px;
+        &--chplay,
+        &--appstore {
+            width: 108.191px;
+            height: 34.127px;
+        }
+    }
+}
+.hero__img {
+    @include tablet-large {
+        width: 30%;
+        height: 100%;
+    }
+    @include mobile {
+        width: 265px;
+        height: 521px;
+    }
+}
+
+/* LogIn */
+.login{
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.6);
+    align-items: center;
+    justify-content: center;
+    display: none;
+    z-index: 100000;
+    &.open {
+        display: flex;
+    }
+    &-container {
+        max-width: 450px;
+        width: 50%;
+        min-width: 320px;
+        position: relative;
+        background: $color-white;
+        animation: loginFaceIn ease 0.4s;
+    }
+    &-close {
+        padding: 12px;
+        font-size: 16px;
+        position: absolute;
+        top: 0;
+        right: 0;
+        color: $color-white;
+        &:hover {
+            transform: scale(1.1);
+        }
+    }
+    &-header {
+        height: 130px;
+        font-size: 30px;
+        color: $color-white;
+        text-transform: uppercase;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: $color-primary;
+    }
+    &-body {
+        @include flex( $display: flex,$direction: column,$align: center,
+        $justify: center,$wrap: false,$gap: 40px );
+        padding: 32px 16px 0;
+        & .login-form {
+            width: 100%;
+            @include flex( $display: flex,$direction: column,$align: center,
+            $justify: center,$wrap: false,$gap: 20px );
+        }
+    }
+    &-input {
+        position: relative;
+        width: 100%;
+        font-size: 15px;
+        & input[type="text"], & input[type="password"] {
+            width: 100%;
+            padding: 10px 40px 10px 10px; /* Để giữ chỗ cho biểu tượng */
+            border: 2px solid $text-color-gray;
+            border-radius: 10px;
+            font-size: 16px;
+        }
+        & .bx {
+            position: absolute;
+            top: 50%;
+            right: 10px;
+            transform: translateY(-50%);
+            font-size: 20px;
+            color: $text-color-gray;
+        }
+    }
+    &-btn {
+        background: $color-primary;
+        width: 100%;
+        border: none;
+        border-radius: 25px;
+        color: $color-white;
+        font-size: 15px;
+        padding: 16px;
+        &:hover {
+            cursor: pointer;
+            opacity: 0.8;
+        }
+    }
+    &-footer {
+        @include flex( $display: flex,$direction: column,$align: center,
+        $justify: center,$wrap: false,$gap: 20px );
+        padding: 16px;
+        & a {
+            color: $color-primary;
+        }
+        & .profile__social {
+            position: static;
+            transform: translateX(0);
+            &-icon:first-child {
+                display: none;
+            }
+            &-icon:nth-child(2) {
+                filter: invert(0);
+            }
+        }
+    }
+}
+@keyframes loginFaceIn {
+    from {
+        transform: translateY(-140px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+    

@@ -1,0 +1,35 @@
+@use '../abstracts/' as *;
+
+.business-card {
+    @include flex($display: flex,$direction: column,$align: center,
+    $justify: start,$wrap: false,$gap: false);
+    max-width: 770px;
+    width: 100%;
+    height: 357px;
+    border-radius: 10px;
+    background: $color-white;
+    box-shadow: 0px 10px 100px 0px rgba(0, 0, 0, 0.24);
+    &__img {
+        margin: 40px 0 20px 0;
+        width: 96px;
+        height: 96px;
+        border-radius: 96px;
+    }
+    &__name {
+        @include font($font-family:$primary-font,$font-size: 31.25px,$font-weight:700,$font-style:normal,$line-height: 47.25px,$color:$text-color-primary);
+        text-transform: uppercase;
+    }
+    &__position {
+        @include font($font-family:$primary-font,$font-size: 20px,$font-weight:600,$font-style:normal,$line-height: 30px,$color:$text-color-primary);
+        text-transform: uppercase;
+    }
+    &__text {
+        margin-top: 8px;
+        max-width: 647px;
+        width: 100%;
+        height: 78px;
+        flex-shrink: 0;
+        @include font($font-family:$primary-font,$font-size: 16px,$font-weight:400,$font-style:normal,$line-height: 24px,$color:$text-color-gray);
+        text-align: center;
+    }
+}

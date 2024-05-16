@@ -1,0 +1,9 @@
+
+<each loop="item in {{ list }}">
+    <div class="business-card">
+        <img src="{{item.images}}" alt="{{item.name}}" class="business-card__img">
+        <h4 class="business-card__name">{{item.name}}</h4>
+        <h6 class="business-card__position">{{item.position}}</h6>
+        <p class="business-card__text">{{item.text}}</p>
+    </div>
+</each>

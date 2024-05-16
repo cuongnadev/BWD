@@ -1,0 +1,17 @@
+
+//color
+$color-primary: #5956E9;
+$color-white:#fff;
+$text-color-primary: #232233;
+$text-color-gray: #6C6C72;
+
+//responsive
+$extra-large: 1201px;
+$large: 992px;
+$medium: 768px;
+$desktop: calc($extra-large - 0.5px);
+$tablet-mini: calc($large - 0.5px);
+$mobile: calc($medium - 0.5px);
+
+//font
+$primary-font : Josefin Sans;

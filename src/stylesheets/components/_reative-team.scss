@@ -1,0 +1,128 @@
+@use '../abstracts/' as *;
+.reative-team {
+    width: 100%;
+    padding-top: 163px;
+    padding-bottom: 120px;
+    @include flex($display: flex,$direction: false,$align: false,
+    $justify: center,$wrap: false,$gap: false);
+    @include tablet-mini {
+        padding-top: 121px;
+    }
+    @include mobile {
+        padding-top: 74px;
+        padding-bottom: 60px;
+    }
+    &__members {
+        @include flex($display: flex,$direction: false,$align: center,
+        $justify: center,$wrap: false,$gap: 30px);
+    }
+    &__heading {
+        @include tablet-mini {
+            & .saction-heading {
+                margin-bottom: 18px;
+            }
+            & .saction-text {
+                margin-bottom: 32px;
+                max-width: 450px;
+                height: 70px;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+        }
+        @include mobile {
+            & .saction-heading {
+                margin-top: 60px;
+                font-size: 25px;
+                font-weight: 600;
+                line-height: 37.5px;
+            }
+            & .saction-text {
+                max-width: 300px;
+                margin-bottom: 40px;
+            }
+        }
+    }
+    @include tablet-large {
+        & .profile {
+            max-width: 296px;
+        }
+        & .profile__info-name {
+            font-size: 25px;
+        }
+        & .profile__info-position {
+            font-size: 18px;
+        }
+        & .profile__info-text {
+            max-width: 292px;
+        }
+    }
+    @include tablet-mini {
+        & .profile {
+            max-width: 213px;
+            height: 453px;
+        }
+        & .profile__info {
+            bottom: 84px;
+        }
+        & .profile__social {
+            bottom: 30px;
+        }
+        & .profile__info-name {
+            font-size: 20px;
+            font-weight: 600;
+            line-height: 30px;
+        }
+        & .profile__info-position {
+            font-size: 16px;
+            font-weight: 400;
+            line-height: 24px;
+        }
+        & .profile__info-text {
+            max-width: 158px;
+            height: 69px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        & .profile__avarta-frame {
+            top: 30px;
+            width: 178px;
+            height: 178px;
+        }
+        & .profile__avarta-img {
+            top: 39px;
+            width: 160px;
+            height: 160px;
+        }
+    }
+    @include mobile {
+        &__members {
+            flex-direction: column;
+        }
+        & .profile {
+            max-width: 343px;
+            height: 580px;
+        }
+        & .profile__info {
+            bottom: 106px;
+        }
+        & .profile__social {
+            bottom: 53px;
+        }
+        & .profile__info-text {
+            max-width: 313px;
+            height: 72px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        & .profile__avarta-frame {
+            top: 29px;
+            width: 220px;
+            height: 220px;
+        }
+        & .profile__avarta-img {
+            top: 40px;
+            width: 198px;
+            height: 198px;
+        }
+    }
+}

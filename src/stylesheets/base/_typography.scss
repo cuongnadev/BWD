@@ -1,0 +1,20 @@
+@use "../abstracts/" as *;
+
+@font-face {
+    font-family: 'Josefin Sans';
+    src: url('../assets/fonts/JosefinSans-Regular.ttf') format('truetype');
+}
+
+body {
+    font-family: $primary-font;
+    font-weight: 400;
+    font-size: pxToRem(14);
+    margin: 0 auto;
+}
+.content-container {
+    max-width: 1170px;
+    width: 100%;
+    @include tablet-large {
+        width: 90%;
+    }
+}

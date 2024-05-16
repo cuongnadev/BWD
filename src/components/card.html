@@ -1,0 +1,11 @@
+
+<each loop="item in {{ list }}">
+    <div class="card">
+        <img src="{{item.images}}" alt="images" class="card__img">
+        <div class="card__content">
+            <h6 class="card__title">{{item.title}}</h6>
+            <p class="card__para">{{item.para}}</p>
+            <h6 class="card__link">Read more</h6>
+        </div>
+    </div>
+</each>

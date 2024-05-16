@@ -1,0 +1,26 @@
+
+<each loop="item in {{ list }}">
+    <div class="profile">
+        <div class="profile__avarta">
+            <img src="../assets/icons/profile-frame.svg" alt="" class="profile__avarta-frame">
+            <img src="{{item.avarta}}" alt="{{item.name}}" class="profile__avarta-img">
+        </div>
+
+        <div class="profile__info">
+            <h4 class="profile__info-name">{{item.name}}</h4>
+            <h6 class="profile__info-position">{{item.position}}</h6>
+            <p class="profile__info-text">{{item.text}}</p>
+        </div>
+
+        <div class="profile__social">
+            <img src="../assets/icons/facebook.svg" alt="facebook" class="profile__social-icon">
+            <img src="../assets/icons/facebook-blue.svg" alt="facebook" class="profile__social-icon">
+            <span class="profile__line"></span>
+            <img src="../assets/icons/instagram.svg" alt="instagram" class="profile__social-icon">
+            <span class="profile__line"></span>
+            <img src="../assets/icons/twitter.svg" alt="twitter" class="profile__social-icon">
+            <span class="profile__line"></span>
+            <img src="../assets/icons/youtube.svg" alt="youtube" class="profile__social-icon">
+        </div>
+    </div>
+</each>

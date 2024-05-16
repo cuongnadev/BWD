@@ -1,0 +1,13 @@
+
+<each loop="item in {{ list }}">
+    <div class="toast">
+        <div class="toast__body">
+            <img src="../assets/icons/checkbox.svg" alt="checkbox" class="toast__icon"></img>
+            <div class="toast__content">
+                <div class="toast__heading">{{item.heading}}</div>
+                <div class="toast__text">{{item.text}}</div>
+            </div>
+        </div>
+        
+    </div>
+</each>

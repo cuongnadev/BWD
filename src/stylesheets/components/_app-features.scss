@@ -1,0 +1,292 @@
+@use '../abstracts/' as *;
+
+.app {
+    padding-bottom: 120px;
+    width: 100%;
+    @include flex($display: flex,$direction: false,$align: false,
+    $justify: center,$wrap: false,$gap: false);
+    background: url(../assets/images/Rectangle-14.png) lightgray 50% / cover no-repeat;
+    & .content-container {
+        max-width: 1181px;
+        @include tablet-large {
+            max-width: 952px;
+        }
+        @include tablet-mini {
+            max-width: 692px;
+        }
+        @include mobile {
+            max-width: 343px;
+        }
+    }
+    &__heading {
+        padding-top: 1px;
+    }
+    & .saction-heading{
+        color: $color-white;
+        @include mobile {
+            margin-top: 60px;
+            font-size: 25px;
+            font-weight: 600;
+            line-height: 37.5px;
+        }
+    }
+    & .saction-text {
+        color: $color-white;
+        @include tablet-mini {
+            max-width: 450px;
+            width: 100%;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        @include mobile {
+            margin-bottom: 32px;
+            max-width: 300px;
+            width: 100%;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+    }
+    &__content {
+        @include flex($display: flex,$direction: false,$align: center,
+        $justify: center,$wrap: false,$gap: 60px);
+        &--center {
+            @include flex($display: flex,$direction: column,$align: center,
+            $justify: center,$wrap: false,$gap: false);
+            flex: 1;
+            &__item {
+                @include flex($display: flex,$direction: column,$align: center,
+                $justify: center,$wrap: false,$gap: 18px);
+            }
+            @include tablet-mini {
+                width: 214px;
+                flex: 0;
+            }
+        } 
+        &--left {
+            @include flex($display: flex,$direction: column,$align: flex-end,
+            $justify: false,$wrap: false,$gap: 340px);
+            height: 768px;
+            flex: 1;
+            &__item {
+                @include flex($display: flex,$direction: column,$align: flex-end,
+                $justify: false,$wrap: false,$gap: 18px);
+                & .app__content--para {
+                    text-align: end;
+                }
+            }
+            @include tablet-large {
+                height: 568px;
+                gap: 240px;
+            }
+            @include tablet-mini {
+                & .app__content--heading {
+                    text-align: end;
+                }
+                height: 435px;
+                gap: 86px;
+            }
+            @include mobile {
+                text-align: center;
+                gap: 60px;
+                &__item {
+                    align-items: center;
+                    & .app__content--para {
+                        text-align: center;
+                    }
+                }
+            }
+        }
+        &--right {
+            @include flex($display: flex,$direction: column,$align: flex-start,
+            $justify: false,$wrap: false,$gap: 340px);
+            height: 768px;
+            flex: 1;
+            &__item {
+                @include flex($display: flex,$direction: column,$align: flex-start,
+                $justify: false,$wrap: false,$gap: 18px);
+                & .app__content--para {
+                    text-align: start;
+                }
+            }
+            @include tablet-large {
+                height: 568px;
+                gap: 240px;
+            }
+            @include tablet-mini {
+                height: 436px;
+                gap: 50px;
+                & .app__content--heading {
+                    width: 215px;
+                    text-align: start;
+                }
+            }
+            @include mobile {
+                text-align: center;
+                gap: 60px;
+                &__item {
+                    align-items: center;
+                    & .app__content--heading {
+                        text-align: center;
+                    }
+                    & .app__content--para {
+                        text-align: center;
+                    }
+                }
+            }
+        }
+        &--icon {
+            position: relative;
+            width: 50px;
+            height: 50px;
+            flex-shrink: 0;
+            &-special {
+                width: 56px;
+                height: 56px;
+                flex-shrink: 0;
+                position: relative;
+            }
+        }
+        &--heading {
+            @include font($font-family:$primary-font,$font-size: 25px,$font-weight:600,$font-style:normal,$line-height: 37.5px,$color:$color-white);
+            text-align: center;
+            text-transform: uppercase;
+            @include tablet-large {
+                font-size: 20px;
+            }
+            @include tablet-mini {
+                font-size: 20px;
+                line-height: 30px;
+                & .saction-text {
+                    width: 450px;
+                    overflow: hidden;
+                    text-overflow: ellipsis; 
+                }
+            }
+            @include mobile {
+                & .saction-heading {
+                    font-size: 25px;
+                    font-weight: 600;
+                    line-height: 37.5px;
+                    margin: 60px auto 18px;
+                }
+                & .saction-text {
+                    width: 300px;
+                    margin-bottom: 40px;
+                    overflow: hidden;
+                    text-overflow: ellipsis; 
+                }
+            }
+        }
+        &--para {
+            width: 297px;
+            height: 43px;
+            flex-shrink: 0;
+            @include font($font-family:$primary-font,$font-size: 16px,$font-weight:400,$font-style:normal,$line-height: 24px,$color:$color-white);
+            text-align: center;
+            @include tablet-mini {
+                width: 215px;
+                height: 43px;
+            }
+        }
+        &--img {
+            margin: 60px 0;
+            width: 375px;
+            height: 812px;
+            flex-shrink: 0;
+            border-radius: 40px;
+            box-shadow: 40px 40px 100px 0px rgba(24, 48, 63, 0.50);
+            object-fit: cover;
+            @include tablet-large {
+                width: 314px;
+                height: 668px;
+                object-fit: inherit;
+            }
+            @include tablet-mini {
+                width: 214px;
+                height: 468px;
+            }
+            @include mobile {
+                width: 214px;
+                height: 468px;
+                object-fit: inherit;
+            }
+        }
+        @include tablet-large  {
+            gap: 30px;
+        }
+        @include tablet-mini {
+            gap: 18px;
+        }
+        @include mobile {
+            flex-direction: column;
+            gap: 60px;
+        }
+    }
+    @include mobile  {
+        padding-bottom: 60px;
+    }
+}
+.icon__center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 55.999px;
+    height: 37.333px;
+}
+.icon__top {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50px;
+    height: 29.395px;
+    &-left {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 18.667px;
+        height: 18.667px;
+    }
+    &-right {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 18.667px;
+        height: 18.667px;
+    }
+}
+.icon__bottom {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 20.06px;
+    height: 5.957px;
+    &-left {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 18.667px;
+        height: 18.667px;
+    }
+    &-right {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        width: 18.667px;
+        height: 18.667px;
+    }
+}
+.icon__vector-center {
+    width: 26.367px;
+    height: 28.927px;
+}
+.icon__vector-dot {
+    position: absolute;
+    top: 58%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 2.93px;
+    height: 2.93px;
+}
